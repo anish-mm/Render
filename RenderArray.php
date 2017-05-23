@@ -196,7 +196,7 @@ class RenderArray {
       }   
       $output .= "</ul>\n";
     }
-    else {
+    elseif (isset($tags)) {
       throw new Exception("No renderer available for this array / type");
     }
     
