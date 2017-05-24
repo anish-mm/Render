@@ -4,8 +4,16 @@ namespace Render;
 
 use Exception;
 
+/**
+ * class that renders arrays into corresponding html
+ */
 class RenderArray
 {
+    /**
+     * @param $arr array the render array to be processed
+     * 
+     * @return string 
+     */
     public function preHandle(array $arr)
     {
         try {
@@ -15,9 +23,13 @@ class RenderArray
         }
     }
     
-  /**
-   * calls appropriate renderer to render $arr
-   */
+    /**
+     * renders $arr to create the corresponding html
+     * 
+     * @param $arr array the render array to be processed
+     * 
+     * @return string the html for $arr
+     */
     private function handle(array $arr)
     {
         if (!isset($arr['type'])) {
@@ -45,16 +57,14 @@ class RenderArray
     }
     
     /**
-     * returns corresponding html for render arrays with type 'table'
+     * renders table render array to corresponding html
+     * 
+     * @param $table array render array for a table
+     * 
+     * @return string html for $table
      */
     private function tableRenderer(array $table)
     {
-        /*
-         * render array for table theme should contain
-         * a 'type' = 'table',
-         * 'headers' : string array: contains the headers for the table
-         * 'rows' : array of rows: each row is an array of strings/render arrays representing rows
-         */
         if (!isset($table['headers']) || !is_array($table['headers'])) {
             throw new Exception("Table headers not set.");
         }
@@ -117,18 +127,14 @@ class RenderArray
     }
     
     /*
-     * returns corresponding html for render arrays with type 'link'
+     * renders link render array to corresponding html
+     * 
+     * @param $link array render array for a link
+     * 
+     * @return string html for $link
      */
     private function linkRenderer(array $link)
     {
-        
-        /*
-         * render array for link will have
-         * a 'type'= 'link',
-         * 'url': string: url for the link,
-         * 'text': string: link text
-         */
-        
         extract($link, EXTR_SKIP);
         
         if (!isset($url)) {
@@ -151,16 +157,15 @@ class RenderArray
         return $output;
     }
     
+    /**
+     * renders page render array to corresponding html
+     * 
+     * @param $arr array render array for a page
+     * 
+     * @return array html for $arr
+     */
     private function pageRenderer(array $arr)
     {
-        /*
-         * render array for page will have
-         * 'type' as 'page',
-         * 'title': string: heading of page,
-         * 'body': string or array of strings/render arrays for links, tables.
-         * 'tags': array of link render arrays.
-         */  
-        
         extract($arr, EXTR_SKIP);
         
         $output = "<html>\n";
