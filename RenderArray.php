@@ -12,7 +12,7 @@ class RenderArray
     /**
      * renders $arr to create corresponding html
      * 
-     * @param $arr array the render array to be processed
+     * @param array $arr the render array to be processed
      * 
      * @return string either corresponding html or an error message
      */
@@ -28,7 +28,7 @@ class RenderArray
     /**
      * renders $arr to create the corresponding html
      * 
-     * @param $arr array the render array to be processed
+     * @param array $arr the render array to be processed
      * 
      * @return string the html for $arr
      */
@@ -61,7 +61,7 @@ class RenderArray
     /**
      * renders table render array to corresponding html
      * 
-     * @param $table array render array for a table
+     * @param array $table render array for a table
      * 
      * @return string html for $table
      */
@@ -131,7 +131,7 @@ class RenderArray
     /*
      * renders link render array to corresponding html
      * 
-     * @param $link array render array for a link
+     * @param array $link render array for a link
      * 
      * @return string html for $link
      */
@@ -162,7 +162,7 @@ class RenderArray
     /**
      * renders page render array to corresponding html
      * 
-     * @param $arr array render array for a page
+     * @param array $arr render array for a page
      * 
      * @return array html for $arr
      */
