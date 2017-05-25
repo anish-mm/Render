@@ -19,7 +19,7 @@ $table = array(
     ),
     
     // an array of arrays representing rows
-        // render arrays for tables or links
+    // render arrays for tables or links
     'rows' => array(
         
         // a row may be array of strings
@@ -48,10 +48,12 @@ $table = array(
 );
 ```
 
-Notes
------
+##Notes
+
 For a table, number of headers in taken as number of columns, and if a row 
 contains more cell values, the excess ones at the end are discarded.
+
+-----
 
 ```
 //example render array for a link
@@ -66,8 +68,10 @@ $link = array(
 );
 ```
 Notes
------
+
 Link text by default is 'Click Here'.
+
+-----
 
 ```
 //example render array for a page
@@ -96,10 +100,12 @@ $page = array(
 ```
 
 Notes
------
+
 $page['body'] should either be a string (in which case, it will be rendered to
 a paragraph), or an array of strings and render arrays. As a consequence, 
 even if you want only one table to be displayed in the body, you would have to 
 pass it as a singleton array with the table render array as the element.
 
 Tags are optional for a page.
+
+-----

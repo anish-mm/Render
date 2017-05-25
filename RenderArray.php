@@ -10,9 +10,11 @@ use Exception;
 class RenderArray
 {
     /**
+     * renders $arr to create corresponding html
+     * 
      * @param $arr array the render array to be processed
      * 
-     * @return string 
+     * @return string either corresponding html or an error message
      */
     public function preHandle(array $arr)
     {
