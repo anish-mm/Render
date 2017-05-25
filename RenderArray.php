@@ -212,7 +212,7 @@ class RenderArray
                          this array / type");
                 }
                 
-                $output .= "  <li>" . $this->handle($val) . "</li>\n";
+                $output .= "  <li>".$this->handle($val)."</li>\n";
             } 
             
             $output .= "</ul>\n";
