@@ -2,7 +2,7 @@
 Creating renderers for render arrays of type link, table, basic page with title,
  body and tags, etc.
 
-EXAMPLES
+## RENDER ARRAY EXAMPLES
 
 ```
 // example render array for a table
@@ -48,7 +48,7 @@ $table = array(
 );
 ```
 
-##Notes
+## Notes
 
 For a table, number of headers in taken as number of columns, and if a row 
 contains more cell values, the excess ones at the end are discarded.
@@ -67,7 +67,7 @@ $link = array(
     'text' => $link_text,
 );
 ```
-Notes
+## Notes
 
 Link text by default is 'Click Here'.
 
@@ -99,9 +99,9 @@ $page = array(
 );
 ```
 
-Notes
+## Notes
 
-$page['body'] should either be a string (in which case, it will be rendered to
+_$page['body']_ should either be a string (in which case, it will be rendered to
 a paragraph), or an array of strings and render arrays. As a consequence, 
 even if you want only one table to be displayed in the body, you would have to 
 pass it as a singleton array with the table render array as the element.
