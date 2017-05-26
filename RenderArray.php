@@ -184,17 +184,22 @@ class RenderArray
         
         //add body
         if (is_array($body)) {
-            foreach ($body as $val) {
-                if (is_string($val)) {
-                    $output .= "<p>".$val."</p>\n";
-                } elseif (is_array($val) && isset($val['type']) &&
-                     'page' != $val['type']) {
-                    $output .= $this->handle($val);
-                } else {
-                    throw new Exception("No renderer available
-                         for this array / type");
+            if (isset($body['type']) && 'page' !== $body['type']) {
+                $output .= $this->handle($body);
+            } else {
+                foreach ($body as $val) {
+                    if (is_string($val)) {
+                        $output .= "<p>".$val."</p>\n";
+                    } elseif (is_array($val) && isset($val['type']) &&
+                       'page' != $val['type']) {
+                        $output .= $this->handle($val);
+                    } else {
+                        throw new Exception("No renderer available
+                             for this array / type");
+                    }
                 }
             }
+            
         } elseif (is_string($body)) {
             $output .= "<p>".$body."</p>\n";
         } else {
