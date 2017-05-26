@@ -4,8 +4,8 @@ Creating renderers for render arrays of type link, table, basic page with title,
 
 ## RENDER ARRAY EXAMPLES
 
+## EXAMPLE RENDER ARRAY FOR A TABLE
 ```
-// example render array for a table
 $table = array(
     'type' => 'table',
     
@@ -55,8 +55,8 @@ contains more cell values, the excess ones at the end are discarded.
 
 -----
 
+## EXAMPLE RENDER ARRAY FOR A LINK
 ```
-//example render array for a link
 $link = array(
     'type' => 'link',
     
@@ -73,15 +73,16 @@ Link text by default is 'Click Here'.
 
 -----
 
+## EXAMPLE RENDER ARRAY FOR A PAGE
 ```
-//example render array for a page
 $page = array(
     'type' => 'page',
     
     //string containing title of page
     'title' => $title_for_my_page,
     
-    //string | array of strings or render arrays for links and tables
+    //string OR render array for link or table OR
+    // array of strings and render arrays for links and tables
     'body' => array(
         $render_array_for_table,
         $render_array_for_link,
@@ -100,11 +101,6 @@ $page = array(
 ```
 
 ## Notes
-
-_$page['body']_ should either be a string (in which case, it will be rendered to
-a paragraph), or an array of strings and render arrays. As a consequence, 
-even if you want only one table to be displayed in the body, you would have to 
-pass it as a singleton array with the table render array as the element.
 
 Tags are optional for a page.
 
