@@ -1,0 +1,19 @@
+{
+    "name": "Render/Render",
+    "description": "Renderers for links, tables, pages",
+    "homepage": "https://github.com/anish-mm/Render",
+    "authors": [
+    {
+        "name": "Anish M M",
+        "email": "anishmathewdev@gmail.com"
+    }
+    ],
+    "require": {
+        "php": "^5.3.3 || ^7.0"    
+    },
+    "autoload": {
+        "psr-4": {
+            "Render": "./"
+        }
+    }
+}
